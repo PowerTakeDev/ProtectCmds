@@ -95,9 +95,11 @@ namespace VoiceFix
 		{
 			g_ProcessVoiceDataDetour = DETOUR_CREATE_MEMBER(ProcessVoiceData, "CGameClient::ProcessVoiceData");
 			if (g_ProcessVoiceDataDetour == nullptr)
+			{
 				V_snprintf(error, maxlen, "Failed to setup CGameClient::ProcessVoiceData detour");
-			else
-				g_ProcessVoiceDataDetour->EnableDetour();
+				return false;
+			}
+			g_ProcessVoiceDataDetour->EnableDetour();
 		}
 		return true;
 	}

@@ -5,8 +5,6 @@
 #include "strtools.cpp"
 #include "util.h"
 
-//DETOUR_DECL_CLASS_MEMBER(CBaseClient, ExecuteStringCommand_);
-
 CDetour* g_ExecuteStringCommandDetour = nullptr;
 
 int g_iMaxUserCmds = 30;
@@ -56,10 +54,13 @@ namespace BlockCmds
 	{
 		if (g_ExecuteStringCommandDetour == nullptr) {
 			g_ExecuteStringCommandDetour = DETOUR_CREATE_MEMBER(ExecuteStringCommand, "CGameClient::ExecuteStringCommand");
-			if (g_ExecuteStringCommandDetour) g_ExecuteStringCommandDetour->EnableDetour();
-			else g_pSM->LogError(myself, "Failed to setup CGameClient::ExecuteStringCommand detour");
+			if (g_ExecuteStringCommandDetour)
+			{
+				V_snprintf(error, maxlen, "Failed to setup CGameClient::ExecuteStringCommand detour");
+				return false;
+			}
+			g_ExecuteStringCommandDetour->EnableDetour();
 		}
-		//DETOUR_INIT_CLASS_MEMBER(CBaseClient, ExecuteStringCommand_, "CBaseClient::ExecuteStringCommand");
 		return true;
 	}
 
@@ -69,6 +70,5 @@ namespace BlockCmds
 			g_ExecuteStringCommandDetour->Destroy();
 			g_ExecuteStringCommandDetour = nullptr;
 		}
-		//DETOUR_DESTROY_CLASS_MEMBER(CBaseClient, ExecuteStringCommand_);
 	}
 }
