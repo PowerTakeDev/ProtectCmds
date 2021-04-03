@@ -1,7 +1,7 @@
 SMSDK = /home/sourcemod
 MMSOURCE = /home/metamod
 HL2SDK = /home/hl2sdk
-SERVER_ROOT=/game
+#SERVER_ROOT=/game
 
 #####################################
 ### EDIT BELOW FOR OTHER PROJECTS ###
@@ -135,7 +135,7 @@ all:
 		ln -sf $(HL2LIB)/$(LIB_PREFIX)tier0$(LIB_SUFFIX); \
 	fi
 	$(MAKE) -f $(MAKEFILE_NAME) extension
-	mv $(BIN_DIR)/$(BINARY) $(SERVER_ROOT)/cstrike/addons/sourcemod/extensions/$(BINARY)
+	#mv $(BIN_DIR)/$(BINARY) $(SERVER_ROOT)/cstrike/addons/sourcemod/extensions/$(BINARY)
 
 extension: $(OBJ_BIN)
 	$(CPP) $(INCLUDE) $(OBJ_BIN) $(LINK) -o $(BIN_DIR)/$(BINARY)
