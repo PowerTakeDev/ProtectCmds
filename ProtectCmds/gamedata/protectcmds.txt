@@ -1,0 +1,95 @@
+"Games"
+{
+	"cstrike"
+	{
+		"Signatures"
+		{
+			"g_pGameRules"
+            {
+                "library"    "server"
+                "linux"        "@g_pGameRules"
+            }
+			"CBaseClient::SetSteamID"
+			{
+				"library"		"engine"
+				"linux"		"@_ZN11CBaseClient10SetSteamIDERK8CSteamID"
+			}
+			"CBaseClient::ProcessStringCmd"
+			{
+				"library"		"engine"
+				"linux"		"@_ZN11CBaseClient16ProcessStringCmdEP13NET_StringCmd"
+			}
+			"CBaseClient::ExecuteStringCommand"
+			{
+				"library"		"engine"
+				"linux"		"@_ZN11CBaseClient16ProcessStringCmdEP13NET_StringCmd"
+			}
+			"CGameClient::ProcessVoiceData"
+			{
+				"library"		"engine"
+				"linux"		"@_ZN11CGameClient16ProcessVoiceDataEP13CLC_VoiceData"
+			}
+			"CGameUI::Deactivate"
+			{
+				"library"		"server"
+				"linux"		"@_ZN7CGameUI10DeactivateEP11CBaseEntity"
+			}
+			"CBaseServer::RejectConnection"
+			{
+				"library"		"engine"
+				"linux"		"@_ZN11CBaseServer16RejectConnectionERK8netadr_sPcz"
+			}
+			"CBaseServer::ConnectClient"
+			{
+				"library"		"engine"
+				"linux"		"@_ZN11CBaseServer13ConnectClientER8netadr_siiiPKcS3_S3_iS3_i"
+			}
+			"CGameClient::ProcessClientInfo"
+			{
+				"library"		"engine"
+				"linux"		"@_ZN11CGameClient17ProcessClientInfoEP14CLC_ClientInfo"
+			}
+			"CBaseAnimating::Studio_BoneIndexByName"
+			{
+				"library"		"server"
+				"linux"		"@_Z22Studio_BoneIndexByNamePK10CStudioHdrPKc"
+			}
+			"CBaseEntity::TakeDamage"
+			{
+				"library"		"server"
+				"linux"		"@_ZN11CBaseEntity10TakeDamageERK15CTakeDamageInfo"
+			}
+			"CGameClient::ExecuteStringCommand"
+			{
+				"library"    "engine"
+                "linux"        "@_ZN11CGameClient20ExecuteStringCommandEPKc"
+			}
+			"CNetChan::ProcessMessages"
+			{
+				"library"    "engine"
+                "linux"        "@_ZN8CNetChan15ProcessMessagesER7bf_read"
+			}
+			"CNetChan::FindMessage"
+			{
+				"library"    "engine"
+                "linux"        "@_ZN8CNetChan11FindMessageEi"
+			}
+			"CNetChan::UpdateMessageStats"
+			{
+				"library"    "engine"
+                "linux"        "@_ZN8CNetChan18UpdateMessageStatsEii"
+			}
+			"CNetChan::IsOverflowed"
+			{
+				"library"    "engine"
+                "linux"        "@_ZNK8CNetChan12IsOverflowedEv"
+			}
+			"CVEngineServer::ServerCommand"
+			{
+				"library"    "engine"
+                "linux"        "@_ZN14CVEngineServer13ServerCommandEPKc"
+			}
+		}
+	}
+}
+
