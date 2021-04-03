@@ -5,8 +5,11 @@ CDetour *g_GameUIHookDetour = nullptr;
 DETOUR_DECL_MEMBER1(GameUI, void *, CBaseEntity*, pActivator) {
 	CBaseHandle *m_player_hndl = (CBaseHandle*)( (uintptr_t)this + 1316);
 
-	if(!m_player_hndl->IsValid()) {
-		DevMsg(SMEXT_CONF_LOGTAG " prevented server crash with CGameUI::Deactivate\n");
+	if(!m_player_hndl->IsValid())
+	{
+#ifdef DEBUG
+		DevMsg(SMEXT_TAG " prevented server crash with CGameUI::Deactivate\n");
+#endif
 		return nullptr;
 	}
 	
