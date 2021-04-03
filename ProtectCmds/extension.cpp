@@ -1,22 +1,6 @@
 #undef DLL_EXPORT
 #include "extension.h"
-#include "util.h"
 #include "CDetour/detours.h"
-#include "iclient.h"
-#include "igameevents.h"
-#include "iserverentity.h"
-#include "iserver.h"
-#include "netadr.h"
-#include "tier1/checksum_crc.h"
-#include "bone_setup.h"
-#include "studio.h"
-#include "tier1/bitbuf.h"
-#include "inetchannel.h"
-#include "sys/socket.h"
-#include "blockingudpsocket.cpp"
-#include <sh_list.h>
-#include "inetmsghandler.h"
-#include "inetmessage.h"
 
 #define GAMECONFIG_FILE "protectcmds"
 

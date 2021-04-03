@@ -55,7 +55,7 @@ LINK += -m32 -lm -ldl -lstdc++
 
 CFLAGS += -DPOSIX -Dstricmp=strcasecmp -D_stricmp=strcasecmp -D_strnicmp=strncasecmp -Dstrnicmp=strncasecmp \
 	-D_snprintf=snprintf -D_vsnprintf=vsnprintf -D_alloca=alloca -Dstrcmpi=strcasecmp -DCOMPILER_GCC -Wall -Werror \
-	-Wno-overloaded-virtual -Wno-switch -Wno-unused -msse -DSOURCEMOD_BUILD -DHAVE_STDINT_H -m32 -Wno-invalid-offsetof -Wno-write-strings
+	-Wno-overloaded-virtual -Wno-switch -Wno-unused -msse -DSOURCEMOD_BUILD -DHAVE_STDINT_H -m32 -Wno-invalid-offsetof -Wno-write-strings -Wno-unused-result
 CPPFLAGS += -Wno-non-virtual-dtor -fno-exceptions -fno-rtti
 
 ################################################
