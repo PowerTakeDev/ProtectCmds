@@ -45,7 +45,7 @@ namespace PreConnectHook
 			g_ConnectClientDetour->EnableDetour();
 		}
 
-		g_pConnectForward = forwards->CreateForward("OnClientPreConnect", ET_Event, 4, nullptr, Param_String, Param_String, Param_String, Param_String);
+		g_pConnectForward = forwards->CreateForward("OnClientPreConnect", ET_Event, 4, nullptr, Param_String, Param_String, Param_String, Param_String); // fix it later :)
 		
 		return true;
 	}
